@@ -4,6 +4,8 @@ import { ErrorRequestHandler } from "express";
 import { PrismaClientKnownRequestError } from '@prisma/client/runtime/client'
 import dotenv from 'dotenv'
 dotenv.config()
+import config from "../config/config.js";
+import logger from "../config/logger.js";
 
 export const errorConverter: ErrorRequestHandler = (err, req, res, next) => {
     let error = err
@@ -36,5 +38,9 @@ export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
         ...(process.env.NODE_ENV === 'development' && {stack: err.stack})
     }
 
+
+    if(config.env === 'development'){
+        logger.error(err)
+    }
     res.status(statusCode).send(response)
 };

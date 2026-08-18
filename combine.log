@@ -1,0 +1,4 @@
+{"level":"info","message":"Hello! This is an info message","timestamp":"2026-08-09T11:36:01.163Z"}
+{"level":"error","message":"Help! Something went wrong","timestamp":"2026-08-09T11:36:01.177Z"}
+[32minfo[39m: Hello! This is an info message
+[31merror[39m: Help! Something went wrong

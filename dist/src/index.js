@@ -1,9 +1,8 @@
 import express from 'express';
 import AuthRoutes from './routes/auth.routes.js';
 import cors from 'cors';
-import dotenv from 'dotenv';
+import './config/config.js';
 import { errorConverter, errorHandler } from './middlewares/error.js';
-dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
